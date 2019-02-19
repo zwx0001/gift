@@ -1,0 +1,43 @@
+<template>
+    <view>
+        <image class="{{idx===v?'':'active'}}active" src="{{i}}" mode="scaleToFill" lazy-load="false" bindtap="ck({{v}},{{i}})"/>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class Imgs extends wepy.component {
+  props = {
+    i: String,
+    v: Number
+  };
+  data = {
+    idx: 0
+  };
+  methods = {
+    ck(v, i) {
+      this.idx = v;
+      this.$emit('img', i);
+    }
+  };
+}
+</script>
+
+<style lang="less" scoped>
+view {
+  height: 200rpx;
+  width: 300rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30rpx;
+  }
+  image.active {
+    border: solid 1rpx red;
+  }
+}
+</style>
+
+
+

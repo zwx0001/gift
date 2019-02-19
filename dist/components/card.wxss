@@ -1,0 +1,40 @@
+.active._d29c7a2 {
+  border: solid 1rpx #00c677 !important;
+}
+.card._d29c7a2 {
+  width: 45%;
+  height: 250rpx;
+  border-radius: 20rpx;
+  border: solid 1rpx #ccc;
+  box-shadow: 0rpx 0rpx 10rpx #ccc;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.btn._d29c7a2 {
+  width: 100%;
+  height: 100rpx;
+  border-top: solid 1rpx #ccc;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 40rpx;
+  color: green;
+  font-weight: bold;
+}
+.count._d29c7a2 {
+  width: 40rpx;
+  height: 40rpx;
+  background: #00c677;
+  color: #fff;
+  line-height: 40rpx;
+  font-size: 20rpx;
+  text-align: center;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  border-radius: 20rpx;
+}

@@ -1,0 +1,164 @@
+<template>
+    <view class="wrapper">
+        <view style="margin-bottom:30rpx;">选择页面</view>
+        <scroll-view class="sw" scroll-x>
+            <repeat for="{{array}}" key="index" index="index" item="item">
+                <imgs :i.sync="item.sku_img" :v.sync="index"></imgs>
+            </repeat>
+        </scroll-view>
+        <view style="margin-top:30rpx;">选择礼品</view>
+        <view class="content">
+            <card money="1000" :tit.sync="msg"></card>
+            <card1 money="800" :tit.sync="msg"></card1>
+            <card2 money="500" :tit.sync="msg"></card2>
+            <card3 money="188" :tit.sync="msg"></card3>
+            <card4 money="166" :tit.sync="msg"></card4>
+            <card5 money="88" :tit.sync="msg"></card5>
+            <card6 money="66" :tit.sync="msg"></card6>
+            <card7 money="18" :tit.sync="msg"></card7>
+            <card8 money="16" :tit.sync="msg"></card8>
+        </view>
+        <view class="foot">
+            <view style="margin-left:30rpx;line-height:50rpx;">
+                <view style="font-size:30rpx;color:gray;">共{{count}}份</view>
+                <view>￥{{total}}</view>
+            </view>
+            <button @tap="buyCar">购买</button>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+import card from '../components/card';
+import Imgs from '../components/img';
+export default class Detail extends wepy.page {
+  data = {
+    msg: '',
+    code: '',
+    total: 0.0,
+    count: 0,
+    array: [],
+    curimg: ''
+  };
+  onLoad(e) {
+    this.msg = e.val;
+    this.code = e.code;
+    let that = this;
+    wx.setNavigationBarTitle({
+      title: e.val
+    });
+    wx.request({
+      methods: 'post',
+      data: {
+        params: that.code,
+        pramsSorts: '默认排序',
+        pageSize: 12
+      },
+      url: 'https://o.jd.com/market/marketChannelAll/search',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function(res) {
+        that.array = res.data.detail;
+        that.curimg = res.data.detail[0].sku_img;
+        that.$apply();
+      }
+    });
+  }
+  components = {
+    imgs: Imgs,
+    card: card,
+    card1: card,
+    card2: card,
+    card3: card,
+    card4: card,
+    card5: card,
+    card6: card,
+    card7: card,
+    card8: card,
+    card9: card
+  };
+  methods = {
+    buyCar() {
+      let date = new Date().toLocaleString();
+      let that = this;
+      this.$navigate({
+        url: './history'
+      });
+
+      let value = wx.getStorageSync('key')
+        ? JSON.parse(wx.getStorageSync('key'))
+        : [];
+      value.push({
+        msg: that.msg,
+        date: date,
+        total: that.total,
+        img: that.curimg
+      });
+      wx.setStorage({
+        key: 'key',
+        data: JSON.stringify(value)
+      });
+    }
+  };
+  events = {
+    add: data => {
+      this.count += 1;
+      this.total += data.money * 1;
+    },
+    minus: data => {
+      this.count -= 1;
+      this.total -= data.money * 1;
+    },
+    img: data => {
+      this.curimg = data;
+    }
+  };
+}
+</script>
+
+<style lang="less" scoped>
+.wrapper {
+  padding: 20rpx;
+}
+.sw {
+  width: 100%;
+  white-space: nowrap;
+  .active {
+    border: solid 1rpx red;
+  }
+}
+.content {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  flex-wrap: wrap;
+  padding-right: 35rpx;
+  margin-bottom: 150rpx;
+}
+.foot {
+  width: 100%;
+  height: 130rpx;
+  position: fixed;
+  border-top: solid 1rpx #ccc;
+  bottom: 0;
+  left: 0;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 150rpx;
+    height: 80rpx;
+    background: #00c677;
+    color: #fff;
+    font-size: 35rpx;
+    text-align: center;
+    line-height: 80rpx;
+    position: absolute;
+    right: 30rpx;
+  }
+}
+</style>
+

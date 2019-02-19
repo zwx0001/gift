@@ -1,0 +1,18 @@
+.content._10d2d74 {
+  padding: 40rpx;
+}
+.cards._10d2d74 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.cards .cards-item._10d2d74 {
+  width: 45%;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.cards .cards-item image._10d2d74 {
+  width: 100%;
+  height: 200rpx;
+}

@@ -1,0 +1,79 @@
+<template>
+  <view class="wrapper">
+    <image src="../images/1_r1_c1.jpg"/>
+    <view class="content">
+      <view style="font-size:35rpx;">赠送朋友物美礼品卡</view>
+      <view class="cards">
+        <repeat for="{{gifts}}" key="index" index="index" item="item">
+          <view class="cards-item" bindtap="handleClick({{item.nm}},{{item.code}})">
+            <image src="{{item.imgUrl}}"/>
+            <view>{{item.nm}}</view>
+          </view>
+        </repeat>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '物美礼品卡'
+  };
+  data = {
+    gifts: [
+      {
+        imgUrl: '../images/1_r3_c2.jpg',
+        nm: '生日卡',
+        code: '24924::6'
+      },
+      {
+        imgUrl: '../images/1_r3_c5.jpg',
+        nm: '节日卡',
+        code: '82031::6'
+      },
+      {
+        imgUrl: '../images/1_r5_c2.jpg',
+        nm: '星座卡',
+        code: '75051::6'
+      },
+      {
+        imgUrl: '../images/1_r5_c5.jpg',
+        nm: '福气卡',
+        code: '94091::6'
+      },
+      {
+        imgUrl: '../images/1_r7_c2.jpg',
+        nm: '天蝎座',
+        code: '94090::6'
+      }
+    ]
+  };
+  methods = {
+    handleClick(val,code) {
+      this.$navigate({ url: './detail?val='+val+'&code='+code });
+    }
+  };
+}
+</script>
+<style lang="less" scoped>
+.content {
+  padding: 40rpx;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  .cards-item {
+    width: 45%;
+    text-align: center;
+    margin-bottom: 30rpx;
+    image {
+      width: 100%;
+      height: 200rpx;
+    }
+  }
+}
+</style>

@@ -1,0 +1,58 @@
+<template>
+    <view class="wrapper">
+        <repeat for="{{arrs}}" key="index" index="index" item="item">
+            <view class="wrap">
+                <image src="{{item.img}}" mode="scaleToFill" lazy-load="false"/>
+                <view style="line-height:60rpx">
+                    <view>{{item.msg}}</view>
+                    <view style="font-size:35rpx;color:gray">购买时间:{{item.date}}</view>
+                    <view style="font-size:35rpx;color:red">￥{{item.total}}</view>
+                </view>
+            </view>
+        </repeat>
+        <button>立即赠送</button>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class history extends wepy.page {
+  config = {
+    navigationBarTitleText: '购买历史'
+  };
+  data = {
+    arrs: []
+  };
+  onLoad(options) {
+    let that = this;
+    wx.getStorage({
+      key: 'key',
+      success(res) {
+        that.arrs = JSON.parse(res.data);
+      }
+    });
+  }
+}
+</script>
+<style lang="less" scoped>
+.wrap {
+  display: flex;
+  border-bottom: solid 1rpx #eee;
+  image {
+    width: 300rpx;
+    height: 200rpx;
+  }
+}
+button {
+  width: 200rpx;
+  height: 100rpx;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  border: solid 1rpx #00c677;
+  color: #00c677;
+  margin-top: 30rpx;
+}
+</style>
+
+
+
+

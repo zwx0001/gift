@@ -1,0 +1,14 @@
+view._0ed8556 {
+  height: 200rpx;
+  width: 300rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+view image._0ed8556 {
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+view image.active._0ed8556 {
+  border: solid 1rpx red;
+}

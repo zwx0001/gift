@@ -1,0 +1,17 @@
+.wrap._ad7d8f0 {
+  display: flex;
+  border-bottom: solid 1rpx #eee;
+}
+.wrap image._ad7d8f0 {
+  width: 300rpx;
+  height: 200rpx;
+}
+button._ad7d8f0 {
+  width: 200rpx;
+  height: 100rpx;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  border: solid 1rpx #00c677;
+  color: #00c677;
+  margin-top: 30rpx;
+}

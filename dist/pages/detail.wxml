@@ -1,0 +1,112 @@
+
+    <view class="wrapper _ff3237e">
+        <view style="margin-bottom:30rpx;" class="_ff3237e">选择页面</view>
+        <scroll-view class="sw _ff3237e" scroll-x>
+            <block class="_ff3237e" wx:for="{{array}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+                
+    <view class="_0ed8556 _ff3237e">
+        <image class="{{$imgs$idx===index?'':'active'}}active _0ed8556" src="{{item.sku_img}}" mode="scaleToFill" lazy-load="false" bindtap="$imgs$ck" data-com-index="{{index}}" data-wpyck-a="{{index}}" data-wpyck-b="{{item.sku_img}}"/>
+    </view>
+            </block>
+        </scroll-view>
+        <view style="margin-top:30rpx;" class="_ff3237e">选择礼品</view>
+        <view class="content _ff3237e">
+            
+    <view class="{{$card$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card$tit}}</view>
+        <view class="_d29c7a2">{{$card$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card$flag}}" bindtap="$card$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card$flag}}" class="count _d29c7a2">{{$card$count}}</text>
+    </view>
+            
+    <view class="{{$card1$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card1$tit}}</view>
+        <view class="_d29c7a2">{{$card1$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card1$flag}}" bindtap="$card1$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card1$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card1$flag}}" class="count _d29c7a2">{{$card1$count}}</text>
+    </view>
+            
+    <view class="{{$card2$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card2$tit}}</view>
+        <view class="_d29c7a2">{{$card2$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card2$flag}}" bindtap="$card2$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card2$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card2$flag}}" class="count _d29c7a2">{{$card2$count}}</text>
+    </view>
+            
+    <view class="{{$card3$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card3$tit}}</view>
+        <view class="_d29c7a2">{{$card3$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card3$flag}}" bindtap="$card3$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card3$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card3$flag}}" class="count _d29c7a2">{{$card3$count}}</text>
+    </view>
+            
+    <view class="{{$card4$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card4$tit}}</view>
+        <view class="_d29c7a2">{{$card4$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card4$flag}}" bindtap="$card4$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card4$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card4$flag}}" class="count _d29c7a2">{{$card4$count}}</text>
+    </view>
+            
+    <view class="{{$card5$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card5$tit}}</view>
+        <view class="_d29c7a2">{{$card5$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card5$flag}}" bindtap="$card5$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card5$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card5$flag}}" class="count _d29c7a2">{{$card5$count}}</text>
+    </view>
+            
+    <view class="{{$card6$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card6$tit}}</view>
+        <view class="_d29c7a2">{{$card6$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card6$flag}}" bindtap="$card6$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card6$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card6$flag}}" class="count _d29c7a2">{{$card6$count}}</text>
+    </view>
+            
+    <view class="{{$card7$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card7$tit}}</view>
+        <view class="_d29c7a2">{{$card7$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card7$flag}}" bindtap="$card7$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card7$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card7$flag}}" class="count _d29c7a2">{{$card7$count}}</text>
+    </view>
+            
+    <view class="{{$card8$flag?'card active':'card'}} _d29c7a2 _ff3237e">
+        <view style="margin:20rpx 0;" class="_d29c7a2">{{$card8$tit}}</view>
+        <view class="_d29c7a2">{{$card8$money}}元</view>
+        <view class="btn _d29c7a2">
+            <text  wx:if="{{$card8$flag}}" bindtap="$card8$minus" class="_d29c7a2">-</text>
+            <text bindtap="$card8$add" class="_d29c7a2">+</text>
+        </view>
+        <text  wx:if="{{$card8$flag}}" class="count _d29c7a2">{{$card8$count}}</text>
+    </view>
+        </view>
+        <view class="foot _ff3237e">
+            <view style="margin-left:30rpx;line-height:50rpx;" class="_ff3237e">
+                <view style="font-size:30rpx;color:gray;" class="_ff3237e">共{{count}}份</view>
+                <view class="_ff3237e">￥{{total}}</view>
+            </view>
+            <button bindtap="buyCar" class="_ff3237e">购买</button>
+        </view>
+    </view>

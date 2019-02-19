@@ -1,0 +1,15 @@
+
+  <view class="wrapper _10d2d74">
+    <image src="../images/1_r1_c1.jpg" class="_10d2d74"/>
+    <view class="content _10d2d74">
+      <view style="font-size:35rpx;" class="_10d2d74">赠送朋友物美礼品卡</view>
+      <view class="cards _10d2d74">
+        <block class="_10d2d74" wx:for="{{gifts}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+          <view class="cards-item _10d2d74" bindtap="handleClick" data-wpyhandleclick-a="{{item.nm}}" data-wpyhandleclick-b="{{item.code}}">
+            <image src="{{item.imgUrl}}" class="_10d2d74"/>
+            <view class="_10d2d74">{{item.nm}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>

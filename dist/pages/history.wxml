@@ -1,0 +1,14 @@
+
+    <view class="wrapper _ad7d8f0">
+        <block class="_ad7d8f0" wx:for="{{arrs}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+            <view class="wrap _ad7d8f0">
+                <image src="{{item.img}}" mode="scaleToFill" lazy-load="false" class="_ad7d8f0"/>
+                <view style="line-height:60rpx" class="_ad7d8f0">
+                    <view class="_ad7d8f0">{{item.msg}}</view>
+                    <view style="font-size:35rpx;color:gray" class="_ad7d8f0">购买时间:{{item.date}}</view>
+                    <view style="font-size:35rpx;color:red" class="_ad7d8f0">￥{{item.total}}</view>
+                </view>
+            </view>
+        </block>
+        <button class="_ad7d8f0">立即赠送</button>
+    </view>
